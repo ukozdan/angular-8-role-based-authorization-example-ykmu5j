@@ -16,6 +16,7 @@ import { LoginComponent } from './login';
 import { IncidentComponent } from './incident';
 import { AssistanceComponent } from './assistance';
 import { PenTestComponent } from './pen-test';
+import { QuickCheckComponent } from './quick-check';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { PenTestComponent } from './pen-test';
         LoginComponent,
         IncidentComponent,
         AssistanceComponent,
-        PenTestComponent
+        PenTestComponent,
+        QuickCheckComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

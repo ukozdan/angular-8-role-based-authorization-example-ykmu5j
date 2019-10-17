@@ -4,6 +4,7 @@ import { HomeComponent } from './home';
 import { IncidentComponent } from './incident';
 import { AssistanceComponent } from './assistance';
 import { PenTestComponent } from './pen-test';
+import { QuickCheckComponent } from './quick-check';
 import { AdminComponent } from './admin';
 import { LoginComponent } from './login';
 import { AuthGuard } from './_helpers';
@@ -28,6 +29,11 @@ const routes: Routes = [
     {
         path: 'pen-test',
         component: PenTestComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'quick-check',
+        component: QuickCheckComponent,
         canActivate: [AuthGuard]
     },
     {
