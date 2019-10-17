@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home';
 import { IncidentComponent } from './incident';
 import { AssistanceComponent } from './assistance';
+import { PenTestComponent } from './pen-test';
 import { AdminComponent } from './admin';
 import { LoginComponent } from './login';
 import { AuthGuard } from './_helpers';
@@ -22,6 +23,11 @@ const routes: Routes = [
     {
         path: 'assistance',
         component: AssistanceComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'pen-test',
+        component: PenTestComponent,
         canActivate: [AuthGuard]
     },
     {

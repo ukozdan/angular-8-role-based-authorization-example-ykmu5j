@@ -15,7 +15,7 @@ import { AdminComponent } from './admin';
 import { LoginComponent } from './login';
 import { IncidentComponent } from './incident';
 import { AssistanceComponent } from './assistance';
-import { PenTestComponent } from './pen-test/pen-test.component';
+import { PenTestComponent } from './pen-test';
 
 @NgModule({
     imports: [
