@@ -1,1 +1,1 @@
-export * from './incident.component';
+export * from "./incident.component";

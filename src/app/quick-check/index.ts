@@ -1,1 +1,1 @@
-export * from './quick-check.component';
+export * from "./quick-check.component";
