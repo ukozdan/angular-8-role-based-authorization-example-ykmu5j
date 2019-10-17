@@ -4,12 +4,12 @@
 		<div class="form-group col">
 			<label>Title</label>
 			<select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                        <option value=""></option>
-                        <option value="Mr">Mr</option>
-                        <option value="Mrs">Mrs</option>
-                        <option value="Miss">Miss</option>
-                        <option value="Ms">Ms</option>
-                    </select>
+          <option value=""></option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+          <option value="Ms">Ms</option>
+      </select>
 			<div *ngIf="submitted && f.title.errors" class="invalid-feedback">
 				<div *ngIf="f.title.errors.required">Title is required</div>
 			</div>
