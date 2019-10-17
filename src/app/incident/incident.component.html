@@ -60,28 +60,50 @@
 		<label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
 		<div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
 	</div>
+	<!--
+	<div class="form-row">
+		<div class="form-group col">
+			<label for="incidentDescription">Incident Description*</label>
+			<input type="text" placeholder="Please describe the incident..." class="form-control" id="incidentDescription" name="incidentDescription" required formControlName="incidentDescription" [ngClass]="{ 'is-invalid': submitted && f.incidentDescription.errors }">
+			<div *ngIf="submitted && f.incidentDescription.errors" class="invalid-feedback">
+				<div *ngIf="f.incidentDescription.errors.required">Incident description is required</div>
+				<div *ngIf="f.incidentDescription.errors.minlength">Incident description must be at least 6 characters
+				</div>
+			</div>
+		</div>
+		<div class="form-group col">
+			<label for="incidentLocation">Incident Location</label>
+			<input type="text" placeholder="Where did this incident occur?" class="form-control" id="incidentLocation" name="incidentLocation" formControlName="incidentLocation" [ngClass]="{ 'is-invalid': submitted && f.incidentLocation.errors }">
+		</div>
+			<div class="form-group col">
+				<label for="peopleInvolved">People Involved</label>
+				<input type="text" placeholder="Who is involved in this incident?" class="form-control" id="peopleInvolved" name="peopleInvolved" formControlName="peopleInvolved" [ngClass]="{ 'is-invalid': submitted && f.peopleInvolved.errors }">
+			</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<label for="peopleAware">People Aware</label>
+						<input type="text" placeholder="Who is currently aware?" class="form-control" id="peopleAware" name="peopleAware" formControlName="peopleAware" [ngClass]="{ 'is-invalid': submitted && f.peopleAware.errors }">
+						</div>
+						<div class="form-group col">
+							<label for="incidentOccurenceDateTime">When did this incidient occur?</label>
+							<input type="datetime-local" formControlName="incidentOccurenceDateTime" class="form-control" id="incidentOccurenceDateTime" name="incidentOccurenceDateTime" [ngClass]="{ 'is-invalid': submitted && f.incidentOccurenceDateTime.errors }">
+						</div>
+							<div class="form-group col">
+								<label for="incidentIdentifiedDateTime">When was this incident identified?</label>
+								<input type="datetime-local" formControlName="incidentIdentifiedDateTime" class="form-control" id="incidentIdentifiedDateTime" name="incidentIdentifiedDateTime" [ngClass]="{ 'is-invalid': submitted && f.incidentIdentifiedDateTime.errors }">
+						</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col">
+									<label for="additionalInformation">Additional Information</label>
+									<input type="text" placeholder="Any Additional Information? (Optional)" formControlName="additionalInformation" class="form-control" id="additionalInformation" name="additionalInformation" [ngClass]="{ 'is-invalid': submitted && f.additionalInformation.errors }">
+						</div>
+									<div class="form-group col">
+										<label for="ivantiReferenceNumber">Ivanti Reference Number (If Applicable)</label>
+										<input type="text" placeholder="Ivanti Reference Number (Optional)" formControlName="ivantiReferenceNumber" class="form-control" id="ivantiReferenceNumber" name="ivantiReferenceNumber" [ngClass]="{ 'is-invalid': submitted && f.ivantiReferenceNumber.errors }">
+								</div>-->
 	<div class="text-center">
 		<button class="btn btn-primary mr-1">Register</button>
 		<button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
 	</div>
 </form>
-
-<!--
-<h1 id="formHeader">Report an Incident</h1>
-Incident Description*
-<input placeholder="Please describe the incident..." name="WHAT" class="required" oninput="this.className = 'required'">
-Incident Location
-<input placeholder="Where did this incident occur?" name="WHERE" oninput="this.className = ''" class="">
-People Involved
-<input placeholder="Who is involved in this incident?" name="WHO" oninput="this.className = ''" class="">
-People Aware
-<input placeholder="Who is currently aware?" name="AWARENESS" oninput="this.className = ''" class="">
-When did this incidient occur?
-<input type="datetime-local" oninput="this.className = ''" name="WHENFROM" class="">
-When was this incident identified?
-<input type="datetime-local" oninput="this.className = ''" name="IDENTIFIED" class="">
-Additional Information
-<input placeholder="Any Additional Information? (Optional)" oninput="this.className = ''" name="OTHER" class="">
-Ivanti Reference Number (If Applicable)
-<input placeholder="Ivanti Reference Number (Optional)" oninput="this.className = ''" name="IVANTI">
--->
