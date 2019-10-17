@@ -15,6 +15,7 @@ import { AdminComponent } from './admin';
 import { LoginComponent } from './login';
 import { IncidentComponent } from './incident';
 import { AssistanceComponent } from './assistance';
+import { PenTestComponent } from './pen-test/pen-test.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { AssistanceComponent } from './assistance';
         AdminComponent,
         LoginComponent,
         IncidentComponent,
-        AssistanceComponent
+        AssistanceComponent,
+        PenTestComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
