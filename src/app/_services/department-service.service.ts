@@ -7,8 +7,6 @@ import { catchError, map, tap } from "rxjs/operators";
 import { DepartmentService } from "../_models/department-service";
 import { MessageService } from "./message.service";
 
-//Todo: fix messages
-
 @Injectable({ providedIn: "root" })
 export class DepartmentServiceService {
   private departmentServicesUrl = "api/department-services"; // URL to web api
