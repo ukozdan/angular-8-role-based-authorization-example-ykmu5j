@@ -51,6 +51,7 @@ import { QuickCheckComponent } from "./quick-check";
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    FontService,
 
     // provider used to create fake backend
     fakeBackendProvider

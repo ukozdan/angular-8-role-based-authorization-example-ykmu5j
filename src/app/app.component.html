@@ -4,36 +4,52 @@
 	<header *ngIf="currentUser">
 		<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
 			<div class="container">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span></button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<button
+              class="navbar-toggler"
+              type="button"
+              aria-controls="navbarSupportedContent"
+              [attr.aria-expanded]="!collapsed"
+              aria-label="Toggle navigation"
+              (click)="collapsed = !collapsed"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+				<div class="navbar-collapse" [class.collapse]="!collapsed" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item dropdown">
+						<li class="nav-item dropdown" ngbDropdown>
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item"
-									href="tel:+441223553543"><span class="mr-1">+441223553543</span>
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle
+								routerLink="">Contact us</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+								<a ngbDropdownItem href="tel:+441223553543" routerLink="">
+									<span class="mr-1">+441223553543</span>
 									<fa-icon [icon]="['fas', 'phone']"></fa-icon>
 								</a>
-								<a class="dropdown-item" href="mailto:groupsecurity@cambridgeassessment.org.uk">
+								<a ngbDropdownItem href="mailto:groupsecurity@cambridgeassessment.org.uk" routerLink="">
 									<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span>
-									<fa-icon [icon]="['fas', 'envelope']"></fa-icon></a>
+									<fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+								</a>
 							</div>
 						</li>
 					</ul>
-					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-								data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false"><span class="mr-1">Daniel Sanders</span>
+					<ul class="navbar-nav" *ngIf="userFromApi">
+						<li class="nav-item dropdown" ngbDropdown>
+							<a class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdownMenuLink2"
+								role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+								ngbDropdownToggle routerLink="">
+								<span class="d-inline-block mr-1">{{userFromApi.firstName}} {{userFromApi.lastName}} (role: {{currentUser.role}})</span>
 								<fa-icon [icon]="['fas', 'user']"></fa-icon>
 							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="/logout.php"><span class="mr-1">Profile</span>
-									<fa-icon [icon]="['fas', 'address-card']"></fa-icon></a>
-								<a class="dropdown-item" href="/logout.php"><span class="mr-1">Log out</span>
-									<fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon></a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2" ngbDropdownMenu>
+								<a class="dropdown-item" [routerLink]="" ngbDropdownItem routerLink="">
+
+									<span class="mr-1">Profile</span>
+									<fa-icon [icon]="['fas', 'address-card']"></fa-icon>
+								</a>
+								<a class="dropdown-item" [routerLink]="" ngbDropdownItem (click)="logout()">
+									<span class="mr-1">Log out</span>
+									<fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+								</a>
 							</div>
 						</li>
 					</ul>
@@ -67,29 +83,26 @@
 					<div class="collapse navbar-collapse" id="navbarNavDropdown2">
 						<ul class="navbar-nav">
 							<li class="nav-item active">
-								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/">Home
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/">Home
 									<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/incident">Incident</a>
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/incident">Incident</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#"
-									routerLink="/assistance">Assistance</a>
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/assistance">Assistance</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/pen-test">Pen-Test</a>
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/pen-test">Pen-Test</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#"
-									routerLink="/quick-check">Quick-Check</a>
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/quick-check">Quick-Check</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/admin"
-									*ngIf="isAdmin">Admin</a>
+								<a class="nav-link pb-2 font-weight-bold" routerLink="/admin" *ngIf="isAdmin">Admin</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" href="#" (click)="logout()">Logout</a>
+								<a class="nav-link pb-2 font-weight-bold" [routerLink]="" (click)="logout()">Logout</a>
 							</li>
 						</ul>
 					</div>
@@ -107,9 +120,11 @@
 	</header>
 
 	<!-- main app container -->
-	<div class="container">
-		<router-outlet></router-outlet>
-	</div>
+	<main class="d-flex flex-fill pb-5 mb-5">
+		<div class="container">
+			<router-outlet></router-outlet>
+		</div>
+	</main>
 
 	<footer class="fixed-bottom pt-3 bg-white shadow-sm-rev">
 		<div class="container">
