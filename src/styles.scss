@@ -1,3 +1,5 @@
+/* autoprefixer grid: on */
+
 // Mixins
 
 /// Slightly lighten a color
@@ -63,6 +65,13 @@ $ca-green: #1cd165;
 $ca-black: #333333;
 
 // 
+
+html {height: 100%;}
+
+app {
+  display: flex;
+  flex: 1;
+}
 
 body {
   font-family: 'Source Sans Pro', sans-serif;

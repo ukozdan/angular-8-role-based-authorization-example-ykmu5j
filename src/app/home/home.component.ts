@@ -4,15 +4,20 @@ import { first } from "rxjs/operators";
 import { User } from "../_models";
 import { UserService, AuthenticationService } from "../_services";
 
+import { DepartmentService } from "../_models/department-service";
+import { DepartmentServiceService } from "../_services/department-service";
+
 @Component({ templateUrl: "home.component.html" })
 export class HomeComponent {
   loading = false;
   currentUser: User;
   userFromApi: User;
+  departmentServices: DepartmentService[] = [];
 
   constructor(
     private userService: UserService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private departmentService: DepartmentService
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -26,5 +31,13 @@ export class HomeComponent {
         this.loading = false;
         this.userFromApi = user;
       });
+    this.getDepartmentServices();
+  }
+
+  getDepartmentServices(): void {
+    this.departmentService.getDepartmentServices().subscribe(
+      departmentServices => (this.departmentServices = departmentServices.slice())
+    );
+    // .subscribe(departmentServices => (this.departmentServices = departmentServices.slice(1, 5)));
   }
 }

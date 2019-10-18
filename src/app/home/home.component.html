@@ -11,3 +11,20 @@
 		</ul>
 	</div>
 </div>
+
+<hr>
+
+<div class="card-deck">
+	<div class="card mb-4 shadow-sm animated scaleUp" *ngFor="let departmentService of departmentServices">
+		<div class="card-header py-4 border-bottom-0 align-items-center justfy-content-center text-center {{departmentService.itemHeaderCssClass}}">
+      <fa-icon [icon]="['fas', departmentService.itemIconCssClass]" class="fa-5x mb-3"></fa-icon>
+			<h2 class="card-title font-weight-bold text-center">{{departmentService.itemHeaderText}}</h2>
+		</div>
+		<div class="card-body">
+        <p class="card-text h5">{{departmentService.itemBodyText}}</p>
+		</div>
+    <div class="card-footer py-4 bg-transparent border-top-0 text-center">
+			<a href="#" class="btn btn-dark btn-lg btn-block stretched-link" routerLink="/detail/{{departmentService.id}}">{{departmentService.itemFooterText}}</a>
+		</div>
+	</div>
+</div>

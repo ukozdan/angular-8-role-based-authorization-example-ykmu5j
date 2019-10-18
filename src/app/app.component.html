@@ -1,10 +1,12 @@
 <div class="animated bg-light fadeIn d-flex flex-column flex-fill">
 
 	<!-- header -->
-	<header *ngIf="currentUser">
-		<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
-			<div class="container">
-				<button
+	<header class="sticky-top" *ngIf="currentUser">
+		<!-- was fixed-top -->
+		<div class="shadow-sm">
+			<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
+				<div class="container">
+					<button
               class="navbar-toggler"
               type="button"
               aria-controls="navbarSupportedContent"
@@ -14,100 +16,105 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-				<div class="navbar-collapse" [class.collapse]="!collapsed" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item dropdown" ngbDropdown>
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle
-								routerLink="">Contact us</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-								<a ngbDropdownItem href="tel:+441223553543" routerLink="">
-									<span class="mr-1">+441223553543</span>
-									<fa-icon [icon]="['fas', 'phone']"></fa-icon>
+					<div class="navbar-collapse" [class.collapse]="!collapsed" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item dropdown" ngbDropdown>
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle
+									routerLink="">Contact us</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+									<a ngbDropdownItem href="tel:+441223553543" routerLink="">
+										<span class="mr-1">+441223553543</span>
+										<fa-icon [icon]="['fas', 'phone']"></fa-icon>
+									</a>
+									<a ngbDropdownItem href="mailto:groupsecurity@cambridgeassessment.org.uk"
+										routerLink="">
+										<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span>
+										<fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<ul class="navbar-nav" *ngIf="userFromApi">
+							<li class="nav-item dropdown" ngbDropdown>
+								<a class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdownMenuLink2"
+									role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+									ngbDropdownToggle routerLink="">
+									<span class="d-inline-block mr-1">{{userFromApi.firstName}} {{userFromApi.lastName}} (role: {{currentUser.role}})</span>
+									<fa-icon [icon]="['fas', 'user']"></fa-icon>
 								</a>
-								<a ngbDropdownItem href="mailto:groupsecurity@cambridgeassessment.org.uk" routerLink="">
-									<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span>
-									<fa-icon [icon]="['fas', 'envelope']"></fa-icon>
-								</a>
-							</div>
-						</li>
-					</ul>
-					<ul class="navbar-nav" *ngIf="userFromApi">
-						<li class="nav-item dropdown" ngbDropdown>
-							<a class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdownMenuLink2"
-								role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-								ngbDropdownToggle routerLink="">
-								<span class="d-inline-block mr-1">{{userFromApi.firstName}} {{userFromApi.lastName}} (role: {{currentUser.role}})</span>
-								<fa-icon [icon]="['fas', 'user']"></fa-icon>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2" ngbDropdownMenu>
-								<a class="dropdown-item" [routerLink]="" ngbDropdownItem routerLink="">
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2" ngbDropdownMenu>
+									<a class="dropdown-item" [routerLink]="" ngbDropdownItem routerLink="">
 
-									<span class="mr-1">Profile</span>
-									<fa-icon [icon]="['fas', 'address-card']"></fa-icon>
-								</a>
-								<a class="dropdown-item" [routerLink]="" ngbDropdownItem (click)="logout()">
-									<span class="mr-1">Log out</span>
-									<fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
-								</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="branding pt-4 bg-white">
-			<div class="container">
-				<div class="row">
-					<div class="col-6 d-flex align-self-center">
-						<p class="h1 font-rubik m-0">
-							<span class="fa-stack h4 mb-0 d-inline-flex align-items-center mr-2">
-                <fa-icon [icon]="['fas', 'coffee']" class="fa-2x fa-stack-2x d-flex align-items-center justify-content-center"></fa-icon>
-                <fa-icon [icon]="['far', 'eye']" class="fa-1x fa-stack-1x fa-inverse d-flex align-items-center justify-content-center mr-1 mb-2"></fa-icon>
-              </span>
-							<span class="ml-1">Security</span>
-						</p>
-					</div>
-					<div class="col-6 d-flex justify-content-end align-self-center">
-						<div class="d-flex align-items-center justify-content-end">
-							<img src="./assets/img/cambridge-assessment-logo.svg" class="main-logo img-fluid" width="220" height="60">
-				</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<nav class="main-nav navbar navbar-expand-lg navbar-light pb-lg-0 bg-white">
-				<div class="container">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span></button>
-					<div class="collapse navbar-collapse" id="navbarNavDropdown2">
-						<ul class="navbar-nav">
-							<li class="nav-item active">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/">Home
-									<span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/incident">Incident</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/assistance">Assistance</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/pen-test">Pen-Test</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/quick-check">Quick-Check</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" routerLink="/admin" *ngIf="isAdmin">Admin</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link pb-2 font-weight-bold" [routerLink]="" (click)="logout()">Logout</a>
+										<span class="mr-1">Profile</span>
+										<fa-icon [icon]="['fas', 'address-card']"></fa-icon>
+									</a>
+									<a class="dropdown-item" [routerLink]="" ngbDropdownItem (click)="logout()">
+										<span class="mr-1">Log out</span>
+										<fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+									</a>
+								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
+			<div class="branding pt-4 bg-white">
+				<div class="container">
+					<div class="row">
+						<div class="col-6 d-flex align-self-center">
+							<p class="h1 font-rubik m-0">
+								<span class="fa-stack h4 mb-0 d-inline-flex align-items-center mr-2">
+                <fa-icon [icon]="['fas', 'coffee']" class="fa-2x fa-stack-2x d-flex align-items-center justify-content-center"></fa-icon>
+                <fa-icon [icon]="['far', 'eye']" class="fa-1x fa-stack-1x fa-inverse d-flex align-items-center justify-content-center mr-1 mb-2"></fa-icon>
+              </span>
+								<span class="ml-1">Security</span>
+							</p>
+						</div>
+						<div class="col-6 d-flex justify-content-end align-self-center">
+							<div class="d-flex align-items-center justify-content-end">
+								<img src="./assets/img/cambridge-assessment-logo.svg" class="main-logo img-fluid" width="220" height="60"/>
+				    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<nav class="main-nav navbar navbar-expand-lg navbar-light pb-lg-0 bg-white">
+					<div class="container">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			        <span class="navbar-toggler-icon"></span>
+          </button>
+						<div class="collapse navbar-collapse" id="navbarNavDropdown2">
+							<ul class="navbar-nav">
+								<li class="nav-item active">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/">Home
+										<span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/incident">Incident</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/assistance">Assistance</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/pen-test">Pen-Test</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/quick-check">Quick-Check</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" routerLink="/admin"
+										*ngIf="isAdmin">Admin</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link pb-2 font-weight-bold" [routerLink]=""
+										(click)="logout()">Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
 			<nav aria-label="breadcrumb">
 				<div class="container">
 					<ol class="breadcrumb small bg-transparent px-2 mb-0">
@@ -121,7 +128,7 @@
 
 	<!-- main app container -->
 	<main class="d-flex flex-fill pb-5 mb-5">
-		<div class="container">
+		<div class="container align-self-center">
 			<router-outlet></router-outlet>
 		</div>
 	</main>
