@@ -5,9 +5,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { FontService } from './_services/font.service';
+import { FontService } from "./_services/font.service";
 
-import {DepartmentServiceService} from "./_services/department-service.service";
+import { DepartmentServiceService } from "./_services/department-service.service";
 
 import {
   FontAwesomeModule,
@@ -30,7 +30,7 @@ import { IncidentComponent } from "./incident";
 import { AssistanceComponent } from "./assistance";
 import { PenTestComponent } from "./pen-test";
 import { QuickCheckComponent } from "./quick-check";
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from "./messages/messages.component";
 
 @NgModule({
   imports: [
