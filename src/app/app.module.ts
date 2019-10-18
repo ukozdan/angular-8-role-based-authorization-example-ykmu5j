@@ -9,6 +9,8 @@ import { FontService } from "./_services/font.service";
 
 import { DepartmentServiceService } from "./_services/department-service.service";
 
+import { MenuService } from './_services/menu.service';
+
 import {
   FontAwesomeModule,
   FaIconLibrary
@@ -57,9 +59,12 @@ import { MessagesComponent } from "./messages/messages.component";
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     FontService,
     DepartmentServiceService,
+    MenuService,
 
     // provider used to create fake backend
-    fakeBackendProvider
+    fakeBackendProvider,
+
+    MenuService
   ],
   bootstrap: [AppComponent]
 })
