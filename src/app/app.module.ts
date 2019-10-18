@@ -31,6 +31,7 @@ import { AssistanceComponent } from "./assistance";
 import { PenTestComponent } from "./pen-test";
 import { QuickCheckComponent } from "./quick-check";
 import { MessagesComponent } from "./messages/messages.component";
+import { DepartmentServicesComponent } from './department-services/department-services.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { MessagesComponent } from "./messages/messages.component";
     AssistanceComponent,
     PenTestComponent,
     QuickCheckComponent,
-    MessagesComponent
+    MessagesComponent,
+    DepartmentServicesComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

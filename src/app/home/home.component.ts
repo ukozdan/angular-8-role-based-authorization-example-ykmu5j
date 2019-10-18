@@ -35,9 +35,9 @@ export class HomeComponent {
   }
 
   getDepartmentServices(): void {
-    this.departmentService.getDepartmentServices().subscribe(
+    this.departmentServiceService.getDepartmentServices().subscribe(
       departmentServices => (this.departmentServices = departmentServices.slice())
+      // .subscribe(departmentServices => (this.departmentServices = departmentServices.slice(1, 5)));
     );
-    // .subscribe(departmentServices => (this.departmentServices = departmentServices.slice(1, 5)));
   }
 }
