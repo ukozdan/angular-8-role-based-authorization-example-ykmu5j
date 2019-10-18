@@ -1,2 +1,174 @@
-/* Add application styles & imports to this file! */
-a { cursor: pointer }
+// Mixins
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+// Bootstrap 4 breakpoints & gutter
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss, line 180
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss, line 216
+$grid-gutter-width: 30px !default;
+
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// number of cards per line for each breakpoint
+$cards-per-line: (
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 4
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+    @media (min-width: $breakpoint) {
+        .card-deck .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+        }
+    }
+}
+
+// Colours
+
+$ca-orange: #ff5527;
+$ca-orange-tint-20: tint($ca-orange, 20%);
+$ca-orange-tint-40: tint($ca-orange, 40%);
+$ca-orange-tint-60: tint($ca-orange, 60%);
+$ca-orange-tint-80: tint($ca-orange, 80%);
+$ca-purple: #af21af;
+$ca-blue: #37c6f7;
+$ca-green: #1cd165;
+$ca-black: #333333;
+
+// 
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.font-rubik {
+    font-family: 'Rubik', sans-serif;
+    font-size: 3.3vw;
+}
+
+.heading-size {
+    font-size: 7vw;
+}
+
+// Backgrounds
+
+.bg-ca-orange {background-color: $ca-orange !important;}
+.bg-ca-orange-tint-20 {background-color: $ca-orange-tint-20 !important;}
+.bg-ca-orange-tint-40 {background-color: $ca-orange-tint-40 !important;}
+.bg-ca-orange-tint-60 {background-color: $ca-orange-tint-60 !important;}
+.bg-ca-orange-tint-80 {background-color: $ca-orange-tint-80 !important;}
+.bg-ca-purple {background-color: $ca-purple !important;}
+.bg-ca-blue {background-color: $ca-blue !important;}
+.bg-ca-green {background-color: $ca-green !important;}
+
+.bg-ca-black {background-color: $ca-black !important;}
+
+// Shadow
+
+.shadow-sm-rev {
+    box-shadow: 0 -0.125rem 0.25rem rgba(0,0,0,0.075) !important;
+}
+
+/* nav */
+
+.main-nav {
+    .navbar-nav {
+        > .nav-item {
+            &.active {
+                > .nav-link {
+                    padding-bottom: 0;
+                    border-bottom: 6px solid #75787b;
+                }
+            }
+            > .nav-link {
+                &:hover, &:focus {
+                    padding-bottom: 0;
+                    border-bottom: 6px solid #ccc;
+                }
+            }
+        }
+    }
+}
+
+// scrolling
+
+.fixed-top {
+    * {transition: all ease-in-out .3s;}
+    &.shrink {
+        .quick-nav {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        .branding {padding-top: 0.75rem !important;}
+        .font-rubik {font-size: 1.5rem !important;}
+        .main-logo {
+            width: 50% !important;
+            height: auto !important;
+        }
+        .main-nav {
+            padding-top: 0 !important;
+            .nav-link {
+                padding-top: .25rem !important;
+                padding-bottom: .25rem !important;
+            }
+        }
+    }
+}
+
+// Animations
+
+/*@keyframes scaleUp {
+0% {transform: scale(1);}
+to {transform: scale(1.1);}
+}
+@keyframes scaleDown {
+0% {transform: scale(1.1);}
+to {transform: scale(1);}
+}*/
+.scaleUp {
+    transition: all .4s ease-in-out;
+    //animation-name: scaleDown;
+    &:hover {
+        transform: scale(1.1);
+        //animation-name: scaleUp;
+    }
+}
+
+// icons
+
+.eye {
+  //margin-top: -.3rem; /* was -0.65rem */
+  //margin-left: -0.15rem;
+  top: 18%;
+  left: 22%;
+}

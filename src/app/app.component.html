@@ -1,107 +1,131 @@
-<!-- header -->
-<header *ngIf="currentUser">
-	<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
-		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span></button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item"
-								href="tel:+441223553543"><span class="mr-1">+441223553543</span><i class="fas fa-phone"></i>
-							</a>
-							<a class="dropdown-item" href="mailto:groupsecurity@cambridgeassessment.org.uk">
-								<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span><i class="fas fa-envelope"></i></a>
-						</div>
-					</li>
-				</ul>
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-							data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"><span class="mr-1">Daniel Sanders</span><i class="fas fa-user"></i>
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item"
-								href="/logout.php"><span class="mr-1">Profile</span><i class="far fa-address-card"></i></a>
-							<a class="dropdown-item"
-								href="/logout.php"><span class="mr-1">Log out</span><i class="fas fa-sign-out-alt"></i></a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="branding pt-4 bg-white">
-		<div class="container">
-			<div class="row">
-				<div class="col-6 d-flex align-self-center">
-					<p class="h1 font-rubik m-0">
-						<span class="fa-stack h4 d-inline-flex align-items-center">
-						<i class="fas fa-coffee fa-stack-2x"></i>
-						<i class="far fa-eye fa-stack-1x fa-inverse"></i>
-					</span>
-						<span class="ml-1">Security</span>
-					</p>
-				</div>
-				<div class="col-6 d-flex justify-content-end align-self-center">
-					<div class="d-flex align-items-center justify-content-end">
-						<img src="./assets/img/cambridge-assessment-logo.svg" class="main-logo img-fluid" width="220" height="60">
-				</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<nav class="main-nav navbar navbar-expand-lg navbar-light pb-lg-0 bg-white">
+<div class="animated bg-light fadeIn d-flex flex-column flex-fill">
+
+	<!-- header -->
+	<header *ngIf="currentUser">
+		<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
 			<div class="container">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span></button>
-				<div class="collapse navbar-collapse" id="navbarNavDropdown2">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item"
+									href="tel:+441223553543"><span class="mr-1">+441223553543</span>
+									<fa-icon [icon]="['fas', 'phone']"></fa-icon>
+								</a>
+								<a class="dropdown-item" href="mailto:groupsecurity@cambridgeassessment.org.uk">
+									<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span>
+									<fa-icon [icon]="['fas', 'envelope']"></fa-icon></a>
+							</div>
+						</li>
+					</ul>
 					<ul class="navbar-nav">
-						<li class="nav-item active">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/">Home
-								<span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/incident">Incident</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/assistance">Assistance</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/pen-test">Pen-Test</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/quick-check">Quick-Check</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/admin"
-								*ngIf="isAdmin">Admin</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link pb-2 font-weight-bold" href="#" (click)="logout()">Logout</a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"><span class="mr-1">Daniel Sanders</span>
+								<fa-icon [icon]="['fas', 'user']"></fa-icon>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="/logout.php"><span class="mr-1">Profile</span>
+									<fa-icon [icon]="['fas', 'address-card']"></fa-icon></a>
+								<a class="dropdown-item" href="/logout.php"><span class="mr-1">Log out</span>
+									<fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon></a>
+							</div>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-</header>
+		<div class="branding pt-4 bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 d-flex align-self-center">
+						<p class="h1 font-rubik m-0">
+							<span class="fa-stack h4 mb-0 d-inline-flex align-items-center mr-2">
+                <fa-icon [icon]="['fas', 'coffee']" class="fa-2x fa-stack-2x d-flex align-items-center justify-content-center"></fa-icon>
+                <fa-icon [icon]="['far', 'eye']" class="fa-1x fa-stack-1x fa-inverse d-flex align-items-center justify-content-center mr-1 mb-2"></fa-icon>
+              </span>
+							<span class="ml-1">Security</span>
+						</p>
+					</div>
+					<div class="col-6 d-flex justify-content-end align-self-center">
+						<div class="d-flex align-items-center justify-content-end">
+							<img src="./assets/img/cambridge-assessment-logo.svg" class="main-logo img-fluid" width="220" height="60">
+				</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<nav class="main-nav navbar navbar-expand-lg navbar-light pb-lg-0 bg-white">
+				<div class="container">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span></button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown2">
+						<ul class="navbar-nav">
+							<li class="nav-item active">
+								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/">Home
+									<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/incident">Incident</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#"
+									routerLink="/assistance">Assistance</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/pen-test">Pen-Test</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#"
+									routerLink="/quick-check">Quick-Check</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/admin"
+									*ngIf="isAdmin">Admin</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-2 font-weight-bold" href="#" (click)="logout()">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<nav aria-label="breadcrumb">
+				<div class="container">
+					<ol class="breadcrumb small bg-transparent px-2 mb-0">
+						<li class="breadcrumb-item active" aria-current="page">
+							<fa-icon [icon]="['fas', 'home']" class="mr-1"></fa-icon><span>Home</span>
+						</li>
+					</ol>
+				</div>
+			</nav>
+	</header>
 
-<!-- main app container -->
-<div class="container">
-	<router-outlet></router-outlet>
-</div>
+	<!-- main app container -->
+	<div class="container">
+		<router-outlet></router-outlet>
+	</div>
 
-<!-- credits -->
-<div class="text-center mt-4">
-	<p>
-		<a href="https://jasonwatmore.com/post/2019/08/06/angular-8-role-based-authorization-tutorial-with-example"
-			target="_top">Angular 8 - Role Based Authorization Tutorial with Example</a>
-	</p>
-	<p>
-		<a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-	</p>
+	<footer class="fixed-bottom pt-3 bg-white shadow-sm-rev">
+		<div class="container">
+			<p>Cambridge Assessment &copy; <span class="currentYear">{{formattedDate}}</span></p>
+		</div>
+	</footer>
+
+	<!-- credits -->
+	<!--<div class="text-center mt-4">
+		<p>
+			<a href="https://jasonwatmore.com/post/2019/08/06/angular-8-role-based-authorization-tutorial-with-example"
+				target="_top">Angular 8 - Role Based Authorization Tutorial with Example</a>
+		</p>
+		<p>
+			<a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+		</p>
+	</div>-->
+
 </div>
