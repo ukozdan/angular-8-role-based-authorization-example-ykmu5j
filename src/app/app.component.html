@@ -1,15 +1,94 @@
-<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-	<div class="navbar-nav">
-		<a class="nav-item nav-link" routerLink="/">Home</a>
-		<a class="nav-item nav-link" routerLink="/incident">Incident</a>
-		<a class="nav-item nav-link" routerLink="/assistance">Assistance</a>
-		<a class="nav-item nav-link" routerLink="/pen-test">Pen-Test</a>
-		<a class="nav-item nav-link" routerLink="/quick-check">Quick-Check</a>
-		<a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
-		<a class="nav-item nav-link" (click)="logout()">Logout</a>
-	</div>
-</nav>
+<!-- header -->
+<header *ngIf="currentUser">
+	<nav class="quick-nav navbar navbar-expand-lg navbar-dark bg-ca-black bg-dark">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item"
+								href="tel:+441223553543"><span class="mr-1">+441223553543</span><i class="fas fa-phone"></i>
+							</a>
+							<a class="dropdown-item" href="mailto:groupsecurity@cambridgeassessment.org.uk">
+								<span class="mr-1">groupsecurity@cambridgeassessment.org.uk</span><i class="fas fa-envelope"></i></a>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+							data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"><span class="mr-1">Daniel Sanders</span><i class="fas fa-user"></i>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item"
+								href="/logout.php"><span class="mr-1">Profile</span><i class="far fa-address-card"></i></a>
+							<a class="dropdown-item"
+								href="/logout.php"><span class="mr-1">Log out</span><i class="fas fa-sign-out-alt"></i></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="branding pt-4 bg-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 d-flex align-self-center">
+					<p class="h1 font-rubik m-0">
+						<span class="fa-stack h4 d-inline-flex align-items-center">
+						<i class="fas fa-coffee fa-stack-2x"></i>
+						<i class="far fa-eye fa-stack-1x fa-inverse"></i>
+					</span>
+						<span class="ml-1">Security</span>
+					</p>
+				</div>
+				<div class="col-6 d-flex justify-content-end align-self-center">
+					<div class="d-flex align-items-center justify-content-end">
+						<img src="" class="main-logo img-fluid" width="220" height="60">
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="main-nav navbar navbar-expand-lg navbar-light pb-lg-0 bg-white">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown2">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/">Home
+								<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/incident">Incident</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/assistance">Assistance</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/pen-test">Pen-Test</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/quick-check">Quick-Check</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" routerLink="/admin"
+								*ngIf="isAdmin">Admin</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link pb-2 font-weight-bold" href="#" (click)="logout()">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+</header>
 
 <!-- main app container -->
 <div class="container">

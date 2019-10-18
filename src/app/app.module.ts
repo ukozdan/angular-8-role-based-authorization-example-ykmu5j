@@ -3,6 +3,17 @@ import { BrowserModule } from "@angular/platform-browser";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
+import { FontService } from './_services/font.service';
+
+import {
+  FontAwesomeModule,
+  FaIconLibrary
+} from "@fortawesome/angular-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+
 // used to create fake backend
 import { fakeBackendProvider } from "./_helpers";
 
@@ -23,7 +34,9 @@ import { QuickCheckComponent } from "./quick-check";
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   declarations: [
     AppComponent,
@@ -44,4 +57,8 @@ import { QuickCheckComponent } from "./quick-check";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far);
+  }
+}
