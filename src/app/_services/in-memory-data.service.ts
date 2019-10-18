@@ -57,17 +57,17 @@ export class InMemoryDataService implements InMemoryDbService {
         itemFooterText: "Go"
       }
     ];
-    return { heroes };
+    return { departmentServices };
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
+  // Overrides the genId method to ensure that a department service always has an id.
+  // If the department services array is empty,
   // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0
-      ? Math.max(...heroes.map(hero => hero.id)) + 1
+  // if the department services array is not empty, the method below returns the highest
+  // department service id + 1.
+  genId(departmentServices: DepartmentService[]): number {
+    return departmentServices.length > 0
+      ? Math.max(...departmentServices.map(departmentService => departmentService.id)) + 1
       : 11;
   }
 }

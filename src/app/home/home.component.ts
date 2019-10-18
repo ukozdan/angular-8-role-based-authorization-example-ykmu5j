@@ -5,7 +5,7 @@ import { User } from "../_models";
 import { UserService, AuthenticationService } from "../_services";
 
 import { DepartmentService } from "../_models/department-service";
-import { DepartmentServiceService } from "../_services/department-service";
+import { DepartmentServiceService } from "../_services/department-service.service";
 
 @Component({ templateUrl: "home.component.html" })
 export class HomeComponent {

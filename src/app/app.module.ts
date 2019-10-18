@@ -6,10 +6,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { FontService } from "./_services/font.service";
-
 import { DepartmentServiceService } from "./_services/department-service.service";
-
-import { MenuService } from './_services/menu.service';
+import { MenuService } from "./_services/menu.service";
 
 import {
   FontAwesomeModule,

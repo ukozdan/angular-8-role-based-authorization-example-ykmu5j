@@ -47,12 +47,8 @@ export class AppComponent {
           this.breadcrumbList.push({
             name: target.name,
             // The second layer starts routing and adds the routing of the previous layer. The relative position will cause a routing error.
-            path:
-              index === 0
-                ? target.path
-                : `${this.breadcrumbList[index - 1].path}/${target.path.slice(
-                    2
-                  )}`
+            path: index === 0 ? target.path : `${this.breadcrumbList[index - 1].path}/${target.path.slice(2)}`
+            // Need condition for when target is undefined
           });
 
           // The next level to be compared is the specified subpage of this layer.
