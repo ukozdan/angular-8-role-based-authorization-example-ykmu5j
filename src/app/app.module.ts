@@ -35,6 +35,7 @@ import { DepartmentServicesComponent } from './department-services/department-se
 import { DepartmentServiceDetailComponent } from './department-service-detail/department-service-detail.component';
 import { DepartmentServiceSearchComponent } from './department-service-search/department-service-search.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertService } from './_services/alert.service';
 
 @NgModule({
   imports: [
@@ -70,7 +71,9 @@ import { RegisterComponent } from './register/register.component';
     // provider used to create fake backend
     fakeBackendProvider,
 
-    MenuService
+    MenuService,
+
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

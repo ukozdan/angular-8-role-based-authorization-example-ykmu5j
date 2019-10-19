@@ -29,9 +29,9 @@ export class DepartmentServicesComponent implements OnInit {
       return;
     }
     this.departmentServiceService
-      .addHero({ name } as DepartmentService)
-      .subscribe(hero => {
-        this.departmentServices.push(hero);
+      .addDepartmentService({ name } as DepartmentService)
+      .subscribe(departmentService => {
+        this.departmentServices.push(departmentService);
       });
   }
 
