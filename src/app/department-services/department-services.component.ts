@@ -39,7 +39,7 @@ export class DepartmentServicesComponent implements OnInit {
     this.departmentServices = this.departmentServices.filter(
       h => h !== departmentService
     );
-    this.departmentServiceService.deleteHero(departmentService).subscribe();
+    this.departmentServiceService.deleteDepartmentService(departmentService).subscribe();
   }
 }
 
