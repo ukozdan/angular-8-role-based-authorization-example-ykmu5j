@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
@@ -41,7 +42,8 @@ import { AlertService } from "./_services/alert.service";
     HttpClientModule,
     appRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
