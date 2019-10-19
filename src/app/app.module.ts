@@ -31,11 +31,11 @@ import { AssistanceComponent } from "./assistance";
 import { PenTestComponent } from "./pen-test";
 import { QuickCheckComponent } from "./quick-check";
 import { MessagesComponent } from "./messages/messages.component";
-import { DepartmentServicesComponent } from './department-services/department-services.component';
-import { DepartmentServiceDetailComponent } from './department-service-detail/department-service-detail.component';
-import { DepartmentServiceSearchComponent } from './department-service-search/department-service-search.component';
-import { RegisterComponent } from './register/register.component';
-import { AlertService } from './_services/alert.service';
+import { DepartmentServicesComponent } from "./department-services/department-services.component";
+import { DepartmentServiceDetailComponent } from "./department-service-detail/department-service-detail.component";
+import { DepartmentServiceSearchComponent } from "./department-service-search/department-service-search.component";
+import { RegisterComponent } from "./register/register.component";
+import { AlertService } from "./_services/alert.service";
 
 @NgModule({
   imports: [
@@ -78,7 +78,10 @@ import { AlertService } from './_services/alert.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  send_date = new Date();
+  formattedDate: any;
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, far);
+    this.formattedDate = this.send_date.getFullYear();
   }
 }
