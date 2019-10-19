@@ -9,10 +9,7 @@ import { FontService } from "./_services/font.service";
 import { DepartmentServiceService } from "./_services/department-service.service";
 import { MenuService } from "./_services/menu.service";
 
-import {
-  FontAwesomeModule,
-  FaIconLibrary
-} from "@fortawesome/angular-fontawesome";
+import { FontAwesomeModule, FaIconLibrary } from "@fortawesome/angular-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
@@ -67,12 +64,9 @@ import { AlertService } from "./_services/alert.service";
     FontService,
     DepartmentServiceService,
     MenuService,
-
     // provider used to create fake backend
     fakeBackendProvider,
-
     MenuService,
-
     AlertService
   ],
   bootstrap: [AppComponent]
