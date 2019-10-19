@@ -6,7 +6,7 @@ export class MenuService {
 
   getMenu(): Array<any> {
     const menu = [
-      { name: "Home", path: "./home", children: [] },
+      { name: "Home", path: "./", children: [] },
       { name: "Incident", path: "./incident", children: [] },
       { name: "Assistance", path: "./assistance", children: [] },
       { name: "Pen-Test", path: "./pen-test", children: [] },

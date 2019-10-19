@@ -17,7 +17,7 @@ export class HomeComponent {
   constructor(
     private userService: UserService,
     private authenticationService: AuthenticationService,
-    private departmentService: DepartmentService
+    private departmentServiceService: DepartmentServiceService
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
