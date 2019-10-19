@@ -12,7 +12,8 @@ export class MenuService {
       { name: "Pen-Test", path: "./pen-test", children: [] },
       { name: "Quick-Check", path: "./quick-check", children: [] },
       { name: "Admin", path: "./admin", children: [] },
-      //{ name: "Logout", path: "", children: [] },
+      { name: "Logout", path: "", children: [] },
+      { name: "Login", path: "./login", children: [] },
       /*{
         name: "stores",
         path: "./stores",

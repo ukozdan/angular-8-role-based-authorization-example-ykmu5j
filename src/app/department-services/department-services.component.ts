@@ -19,7 +19,7 @@ export class DepartmentServicesComponent implements OnInit {
 
   getDepartmentServices(): void {
     this.departmentServiceService
-      .getHeroes()
+      .getDepartmentServices()
       .subscribe(departmentServices => (this.departmentServices = departmentServices));
   }
 
