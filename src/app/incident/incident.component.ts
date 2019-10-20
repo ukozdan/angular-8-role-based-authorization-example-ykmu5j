@@ -18,16 +18,26 @@ export class IncidentComponent implements OnInit {
   ngOnInit() {
     this.incidentForm = this.formBuilder.group(
       {
-        title: ["", Validators.required],
+        /*title: ["", Validators.required],
         firstName: ["", Validators.required],
         lastName: ["", Validators.required],
         email: ["", [Validators.required, Validators.email]],
         password: ["", [Validators.required, Validators.minLength(6)]],
         confirmPassword: ["", Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
+        acceptTerms: [false, Validators.requiredTrue]*/
+        incidentDescription: ["", Validators.required],
+        incidentLocation: ["", Validators.required],
+        peopleInvolved: ["", Validators.required],
+        peopleAware: ["", Validators.required],
+        incidentOccurenceDateTime: ["", Validators.required],
+        incidentIdentifiedDateTime: ["", Validators.required],
+        additionalInformation: ["", Validators.required],
+        ivantiReferenceNumber: ["", Validators.required],
+
+
       },
       {
-        validator: MustMatch("password", "confirmPassword")
+        //validator: MustMatch("password", "confirmPassword")
       }
     );
   }
