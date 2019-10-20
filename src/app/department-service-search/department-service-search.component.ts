@@ -33,7 +33,7 @@ export class DepartmentServiceSearchComponent implements OnInit {
 
       // switch to new search observable each time the term changes
       switchMap((term: string) =>
-        this.departmentServiceService.searchDepartmentService(term)
+        this.departmentServiceService.searchDepartmentServices(term)
       )
     );
   }
