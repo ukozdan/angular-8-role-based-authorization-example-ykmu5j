@@ -64,7 +64,7 @@
 	<div class="form-row">
 		<div class="form-group col">
 			<label for="incidentDescription">Incident Description*</label>
-			<input type="text" placeholder="Please describe the incident..." class="form-control" id="incidentDescription" name="incidentDescription" required formControlName="incidentDescription" [ngClass]="{ 'is-invalid': submitted && f.incidentDescription.errors }">
+      <textarea class="form-control" id="incidentDescription" name="incidentDescription" rows="3" placeholder="Please describe the incident..." required formControlName="incidentDescription" [ngClass]="{ 'is-invalid': submitted && f.incidentDescription.errors }"></textarea>
 			<div *ngIf="submitted && f.incidentDescription.errors" class="invalid-feedback">
 				<div *ngIf="f.incidentDescription.errors.required">Incident description is required.</div>
 				<div *ngIf="f.incidentDescription.errors.minlength">Incident description must be at least 6 characters.</div>
@@ -104,7 +104,7 @@
 	<div class="form-row">
     <div class="form-group col">
       <label for="additionalInformation">Additional Information</label>
-      <input type="text" placeholder="Any Additional Information? (Optional)" formControlName="additionalInformation" class="form-control" id="additionalInformation" name="additionalInformation" [ngClass]="{ 'is-invalid': submitted && f.additionalInformation.errors }">
+      <textarea class="form-control" id="additionalInformation" name="additionalInformation" rows="3" placeholder="Any Additional Information? (Optional)" required formControlName="additionalInformation" [ngClass]="{ 'is-invalid': submitted && f.additionalInformation.errors }"></textarea>
     </div>
     <div class="form-group col">
       <label for="ivantiReferenceNumber">Ivanti Reference Number (If Applicable)</label>
