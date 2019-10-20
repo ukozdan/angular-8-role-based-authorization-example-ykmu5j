@@ -10,13 +10,13 @@ import { MustMatch } from "../_helpers/must-match.validator";
   styleUrls: ["./incident.component.css"]
 })
 export class IncidentComponent implements OnInit {
-  registerForm: FormGroup;
+  incidentForm: FormGroup;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group(
+    this.incidentForm = this.formBuilder.group(
       {
         title: ["", Validators.required],
         firstName: ["", Validators.required],
@@ -34,25 +34,25 @@ export class IncidentComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() {
-    return this.registerForm.controls;
+    return this.incidentForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    if (this.incidentForm.invalid) {
       return;
     }
 
     // display form values on success
     alert(
-      "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
+      "SUCCESS!! :-)\n\n" + JSON.stringify(this.incidentForm.value, null, 4)
     );
   }
 
   onReset() {
     this.submitted = false;
-    this.registerForm.reset();
+    this.incidentForm.reset();
   }
 }

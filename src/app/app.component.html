@@ -35,12 +35,12 @@
 								</div>
 							</li>
 						</ul>
-						<ul class="navbar-nav" *ngIf="userFromApi">
+						<ul class="navbar-nav">
 							<li class="nav-item dropdown" ngbDropdown>
 								<a class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdownMenuLink2"
 									role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 									ngbDropdownToggle routerLink="">
-									<span class="d-inline-block mr-1">{{userFromApi.firstName}} {{userFromApi.lastName}} (role: {{currentUser.role}})</span>
+									<span class="d-inline-block mr-1">Daniel Sanders (sandeda)</span>
 									<fa-icon [icon]="['fas', 'user']"></fa-icon>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2" ngbDropdownMenu>
