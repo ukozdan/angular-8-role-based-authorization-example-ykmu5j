@@ -34,6 +34,7 @@ import { DepartmentServiceDetailComponent } from "./department-service-detail/de
 import { DepartmentServiceSearchComponent } from "./department-service-search/department-service-search.component";
 import { RegisterComponent } from "./register/register.component";
 import { AlertService } from "./_services/alert.service";
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import { AlertService } from "./_services/alert.service";
     DepartmentServicesComponent,
     DepartmentServiceDetailComponent,
     DepartmentServiceSearchComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
