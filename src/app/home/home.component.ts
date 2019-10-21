@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { first } from "rxjs/operators";
 
 import { User } from "../_models";
@@ -8,7 +8,7 @@ import { DepartmentService } from "../_models/department-service";
 import { DepartmentServiceService } from "../_services/department-service.service";
 
 @Component({ templateUrl: "home.component.html" })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   loading = false;
   currentUser: User;
   userFromApi: User;
